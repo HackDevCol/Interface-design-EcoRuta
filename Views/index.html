@@ -4,18 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoRuta - Login</title>
-  <link rel="stylesheet" href="../Css/in.css">
-  <link rel="icon" href="../View of the logos/company logo" type="image/x-icon">
+  
+  <link rel="stylesheet" href="../Css/inicio.css">
+  <link rel="icon" href="../Logos/company_logo.ico" type="image/x-icon">
+
   <script>
     function login(event) {
-        event.preventDefault(); // Prevents the default form submission
-        window.location.href = "principal.html"; // Cambiar si principal.html está fuera de views/
+        event.preventDefault();
+        window.location.href = "Home.html"; 
     }
   </script>
 </head>
 <body>
   <div class="login-container">
-    <img src="../View of the logos/WhatsApp_Image_2025-03-15_at_9.32.51_AM-removebg-preview.png" alt="EcoRuta Logo" class="logo">
+    <img src="../Logos/WhatsApp_Image_2025-03-15_at_9.32.51_AM-removebg-preview.png" 
+         alt="EcoRuta Logo" class="logo">
+    
     <h2>Login</h2>
     <form id="login-form" onsubmit="login(event)">
       <label for="email">Email</label>
@@ -26,8 +30,10 @@
       
       <button type="submit">Log In</button>
     </form>
-    <p class="register-text">Don't have an account? <a href="registro.html">Sign up here</a></p>
+    
+    <p class="register-text">Don't have an account? <a href="registry.html">Sign up here</a></p>
   </div>
+
   <p id="error-message" style="color:red; display:none;">Incorrect email or password.</p>
 </body>
 </html>

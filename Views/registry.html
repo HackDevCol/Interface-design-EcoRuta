@@ -4,15 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/registro.css">
-    <link rel="icon" href="../View of the logos/company logo" type="image/x-icon">
+    <link rel="icon" href="../Logos/company_logo.ico" type="image/x-icon">
     <title>User Registration</title>
     
     <script>
         function registerUser(event) {
             event.preventDefault(); // Prevent default form submission
 
-            // Get age input value
-            let age = document.getElementById("age").value;
+            // Get form values
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let age = parseInt(document.getElementById("age").value, 10);
+
+            // Regular expression for email validation
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Validate input fields
+            if (!name || !email || !password || isNaN(age)) {
+                alert("Please fill out all fields correctly.");
+                return;
+            }
+
+            // Check if the email format is valid
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
 
             // Check if the user is at least 18 years old
             if (age < 18) {
@@ -20,7 +38,17 @@
                 return;
             }
 
-            window.location.href = '../index.html'; // Redirect to index.html
+            // Check if password length is at least 6 characters
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return;
+            }
+
+            // Store user data (simulated registration)
+            localStorage.setItem("user", JSON.stringify({ name, email, age }));
+
+            alert("Registration successful!");
+            window.location.href = '../views/Index.html'; // Redirect to index.html
         }
     </script>
 </head>
@@ -30,19 +58,19 @@
         <form onsubmit="registerUser(event)">
             <div class="input-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Name" required>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
             </div>
             <div class="input-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Email or phone number" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
             <div class="input-group">
                 <label for="age">Age</label>
-                <input type="number" id="age" placeholder="Enter your age" required>
+                <input type="number" id="age" name="age" placeholder="Enter your age" required>
             </div>
             <button type="submit" class="btn">Sign Up</button>
         </form>

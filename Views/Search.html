@@ -4,22 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/inicio.css">
-    <link rel="icon" href="../View of the logos/company logo" type="image/x-icon">
+    <link rel="icon" href="../Logos/company_logo.ico" type="image/x-icon">
     <title>Search</title>
 </head>
 <body>
     <div class="menu">
         <ul>
-            <li><a href="configuracion.html"><i>⚙</i> Settings</a></li>
-            <li><a href="ubicaciones.html"><i>📍</i> Locations</a></li>
-            <li><a href="busqueda.html"><i>🔍</i> Search</a></li>
-            <li><a href="cerrar-sesion.html"><i>🚪</i> Log Out</a></li>
+            <li><a href="settings.html">⚙ Settings</a></li>
+            <li><a href="locations.html">📍 Locations</a></li>
+            <li><a href="search.html">🔍 Search</a></li>
+            <li><a href="log_out.html">🚪 Log Out</a></li>
         </ul>
     </div>
+    
     <div class="content">
         <h1>Search</h1>
-        <input type="text" placeholder="Search..." />
-        <button>Search</button>
+        
+        <form>
+            <label for="search-box" class="visually-hidden">Search</label>
+            <input type="text" id="search-box" placeholder="Search..." />
+            <button type="submit">Search</button>
+        </form>
     </div>
 </body>
 </html>

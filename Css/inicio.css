@@ -1,21 +1,31 @@
+/* Importar fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #1e3a34, #2ea04c);
     margin: 0;
+    padding: 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     color: #e0e0e0;
 }
 
+/* Menú lateral */
 .menu {
     width: 60px;
     background: #1e3a34;
     color: white;
-    padding: 20px 0;
-    transition: width 0.3s;
+    padding-top: 20px;
+    transition: width 0.3s ease;
     overflow: hidden;
     position: fixed;
     height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .menu:hover {
@@ -33,7 +43,7 @@ body {
     cursor: pointer;
     text-align: left;
     white-space: nowrap;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
     font-weight: 500;
     font-size: 16px;
 }
@@ -57,17 +67,21 @@ body {
     margin-right: 10px;
 }
 
+/* Contenido principal */
 .content {
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    padding-left: 60px;
-    width: 100%;
+    padding-left: 80px;
+    width: calc(100% - 80px);
+    text-align: center;
 }
 
-.container {
+/* Estilos del formulario de login */
+.login-container {
     background: white;
     color: #333;
     padding: 20px;
@@ -75,6 +89,15 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -82,28 +105,34 @@ h2 {
     color: #1e3a34;
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-between;
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 button {
-    width: 48%;
+    width: 100%;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: 0.3s;
+    transition: background 0.3s ease;
 }
 
-.cancel {
-    background: #ccc;
-    color: #333;
-}
-
-.cancel:hover {
-    background: #999;
+button:hover {
+    opacity: 0.8;
 }
 
 .confirm {
@@ -113,4 +142,25 @@ button {
 
 .confirm:hover {
     background: #1e3a34;
+}
+
+.register-text {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.register-text a {
+    color: #2ea04c;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+#error-message {
+    color: red;
+    display: none;
+    margin-top: 10px;
 }

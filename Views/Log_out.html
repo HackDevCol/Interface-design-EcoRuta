@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/inicio.css">
-    <link rel="icon" href="../View of the logos/company logo" type="image/x-icon">
+    <link rel="icon" href="../Logos/company_logo.ico" type="image/x-icon">
     <title>Log Out</title>
 </head>
 <body>
-    <div class="menu">
+    <nav class="menu">
         <ul>
-            <li><a href="configuracion.html">⚙ Settings</a></li>
-            <li><a href="ubicaciones.html">📍 Locations</a></li>
-            <li><a href="busqueda.html">🔍 Search</a></li>
-            <li><a href="cerrar-sesion.html">🚪 Log Out</a></li>
+            <li><a href="settings.html">⚙ Settings</a></li>
+            <li><a href="locations.html">📍 Locations</a></li>
+            <li><a href="search.html">🔍 Search</a></li>
+            <li><a href="log_out.html">🚪 Log Out</a></li>
         </ul>
-    </div>
+    </nav>
 
-    <div class="content">
+    <main class="content">
         <div class="container">
             <h2>Are you sure you want to log out?</h2>
             <div class="buttons">
@@ -25,13 +25,16 @@
                 <button class="confirm" onclick="logout()">Confirm</button>
             </div>
         </div>
-    </div>
+    </main>
 
     <script>
         function logout() {
-            document.querySelector('.container').innerHTML = '<h2>You have successfully logged out.</h2><p>Redirecting...</p>';
+            document.querySelector('.container').innerHTML = `
+                <h2>You have successfully logged out.</h2>
+                <p>Redirecting to the login page...</p>
+            `;
             setTimeout(function() {
-                window.location.href = "../index.html"; // Corregido
+                window.location.href = "../views/Index.html"; 
             }, 2000);
         }
     </script>
