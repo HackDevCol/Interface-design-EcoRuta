@@ -1,0 +1,20 @@
+CREATE DATABASE EcoRuta;
+USE EcoRuta;
+
+-- Tabla de repartidores
+CREATE TABLE repartidores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    contraseña VARCHAR(255) NOT NULL
+);
+
+-- Tabla de rutas optimizadas
+CREATE TABLE rutas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_repartidor INT NOT NULL,
+    destino VARCHAR(255) NOT NULL,  -- Dirección final del repartidor
+    ruta_optima TEXT NOT NULL,      -- Ruta optimizada en formato JSON
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_repartidor) REFERENCES repartidores(id) ON DELETE CASCADE
+);
