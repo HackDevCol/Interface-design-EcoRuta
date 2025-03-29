@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/inicio.css">
-    <link rel="icon" href="img/WhatsApp_Image_2025-03-15_at_9.32.51_AM-removebg-preview.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/inicio.css">
+    <link rel="icon" href="../View of the logos/company logo" type="image/x-icon">
     <title>Log Out</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
         function logout() {
             document.querySelector('.container').innerHTML = '<h2>You have successfully logged out.</h2><p>Redirecting...</p>';
             setTimeout(function() {
-                window.location.href = "index.html";
+                window.location.href = "../index.html"; // Corregido
             }, 2000);
         }
     </script>
