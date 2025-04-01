@@ -164,3 +164,43 @@ button:hover {
     display: none;
     margin-top: 10px;
 }
+/* Añade esto al final de tu archivo CSS */
+
+/* Body modificado */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #1e3a34, #2ea04c);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    color: #e0e0e0;
+    display: flex;
+}
+
+/* Content modificado */
+.content {
+    flex: 1;
+    padding-left: 80px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mapa fullscreen */
+#map {
+    flex: 1;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+}
+
+/* Opcional: para pantallas pequeñas */
+@media (max-width: 768px) {
+    .content {
+        padding-left: 60px;
+    }
+    
+    .menu:hover {
+        width: 60px;
+    }
+}

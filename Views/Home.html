@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../Css/inicio.css">
     <link rel="icon" href="../Logos/company_logo.ico" type="image/x-icon">
     <title>Main Page</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVVKTEm29LyoJ2ISy8YEiLoAmLnbkNP0M&callback=initMap" async defer></script>
 </head>
 <body>
     <nav class="menu">
@@ -18,8 +19,23 @@
     </nav>
     
     <main class="content">
-        <h1>Welcome to EcoRuta</h1>
-        <p>The map or home page will be displayed here.</p>
+        <div id="map"></div>
     </main>
+
+    <script>
+        function initMap() {
+            const centro = { lat: 4.6097, lng: -74.0817 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: centro
+            });
+
+            new google.maps.Marker({
+                position: centro,
+                map: map,
+                title: "Ubicación central"
+            });
+        }
+    </script>
 </body>
 </html>
