@@ -1,1 +1,0 @@
-# Interface-design-EcoRuta
